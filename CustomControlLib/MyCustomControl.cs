@@ -5,9 +5,25 @@ namespace CustomControlLib
 {
     public class MyCustomControl : Control
     {
+        private const string ButtonPartName = "PART_Button";
         static MyCustomControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(MyCustomControl), new FrameworkPropertyMetadata(typeof(MyCustomControl)));
+        }
+
+        private Button _button;
+        public Button Button
+        {
+            get => _button;
+            set
+            {
+                if (_button != null)
+                    _button.Click -= Button_Click;
+
+                _button = value;
+                if (_button == null) return;
+                _button.Click += Button_Click;
+            }
         }
 
         private static readonly DependencyPropertyKey HasBeenClickedPropertyKey =
@@ -17,20 +33,11 @@ namespace CustomControlLib
                 new PropertyMetadata(false));
 
         private static readonly DependencyProperty HasBeenClickedProperty = HasBeenClickedPropertyKey.DependencyProperty;
-
         public bool HasBeenClicked => (bool)GetValue(HasBeenClickedProperty);
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-
-            // TODO: Demo purposes only, check for previous instances and remove handler first.
-
-            var button = GetTemplateChild("PART_Button") as Button;
-
-            if (button != null)
-            {
-                button.Click += Button_Click;
-            }
+            Button = GetTemplateChild(ButtonPartName) as Button;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
