@@ -8,6 +8,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <cc:MyCustomControl />
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <cc:MyCustomControl Grid.Row="0" />
+        <cc:MyCustomControl Grid.Row="1" />
     </Grid>
 </Window>
