@@ -8,5 +8,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <cc:MyCustomControl>
+            <StackPanel x:Name="_stackPanel">
+                <Button cc:MyCustomControl.IncludeChildCount="True">One</Button>
+                <Button cc:MyCustomControl.IncludeChildCount="False">Two</Button>
+                <Button cc:MyCustomControl.IncludeChildCount="True">Three</Button>
+            </StackPanel>
+        </cc:MyCustomControl>
     </Grid>
 </Window>

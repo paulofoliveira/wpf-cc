@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using CustomControlLib;
+using System.ComponentModel;
 using System.Windows;
 
 namespace CustomControlApp
@@ -11,6 +12,11 @@ namespace CustomControlApp
         public MainWindow()
         {
             InitializeComponent();
+
+            // Formas diferentes de setar um valor a uma Attached Property:
+
+            _stackPanel.SetValue(MyCustomControl.IncludeChildCountProperty, true);
+            //MyCustomControl.SetIncludeChildCount(_stackPanel, true);
         }
     }
 
