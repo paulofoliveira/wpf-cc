@@ -11,6 +11,7 @@ namespace CustomControlApp
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new DataObject();
         }
     }
 
