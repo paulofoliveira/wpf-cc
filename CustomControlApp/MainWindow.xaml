@@ -8,5 +8,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31*" />
+            <RowDefinition Height="288*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="List 1" HorizontalAlignment="Center" />
+        <cc:MyCustomControl x:Name="_list1" Grid.Row="1" />
+        <TextBlock Text="List 2" HorizontalAlignment="Center" Grid.Column="1" />
+        <cc:MyCustomControl x:Name="_list2" Grid.Row="1" Grid.Column="1" />
     </Grid>
 </Window>

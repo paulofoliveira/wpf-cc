@@ -11,6 +11,12 @@ namespace CustomControlApp
         public MainWindow()
         {
             InitializeComponent();
+
+            var obj1 = new DataObject() { Name = "Paulo Silva" };
+            var obj2 = new DataObject() { Name = "Cecilia Oliveira" };
+
+            _list1.Items.Add(obj1);
+            _list2.Items.Add(obj2);
         }
     }
 
@@ -30,5 +36,6 @@ namespace CustomControlApp
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void NotifyPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        public override string ToString() => $"Name: {Name}";
     }
 }
