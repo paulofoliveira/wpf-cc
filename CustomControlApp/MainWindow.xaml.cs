@@ -12,6 +12,11 @@ namespace CustomControlApp
         {
             InitializeComponent();
         }
+
+        private void MyCustomControl_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     public class DataObject : INotifyPropertyChanged
