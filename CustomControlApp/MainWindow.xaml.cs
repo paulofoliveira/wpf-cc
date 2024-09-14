@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Input;
 
 namespace CustomControlApp
 {
@@ -11,6 +12,22 @@ namespace CustomControlApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void CommandBinding_CanExecute(object sender, System.Windows.Input.CanExecuteRoutedEventArgs e)
+        {
+            //if (!string.IsNullOrEmpty(textBox1.SelectedText))
+            //    e.CanExecute = true;
+        }
+
+        private void CommandBinding_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        {
+            //textBox1.Text = "I cut this out!";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationCommands.Cut.Execute(null, textBox1);
         }
     }
 
