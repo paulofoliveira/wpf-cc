@@ -33,21 +33,34 @@ namespace CustomControlLib
 
         public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click",
             RoutingStrategy.Bubble,
-            typeof(RoutedEventHandler),
+            typeof(MyRoutedEventHandler),
             typeof(MyCustomControl));
 
         // O nome do evento deve bater com a string registrada no EventManager.
 
-        public event RoutedEventHandler Click
+        public event MyRoutedEventHandler Click
         {
             add { AddHandler(ClickEvent, value); }
             remove { RemoveHandler(ClickEvent, value); }
         }
         protected virtual void RaiseClickEvent()
         {
-            var args = new RoutedEventArgs(ClickEvent);
+            var args = new MyRoutedEventArgs(ClickEvent, "Test");
             RaiseEvent(args);
         }
 
+        public delegate void MyRoutedEventHandler(object sender, MyRoutedEventArgs e);
+    }
+
+    /// <summary>
+    /// Instance of MyRoutedEventArgs' class
+    /// </summary>
+    public class MyRoutedEventArgs : RoutedEventArgs
+    {
+        public MyRoutedEventArgs(RoutedEvent @event, string param)
+        {
+            Param = param;
+        }
+        public string Param { get; }
     }
 }

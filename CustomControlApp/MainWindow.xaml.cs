@@ -12,8 +12,7 @@ namespace CustomControlApp
         {
             InitializeComponent();
         }
-
-        private void MyCustomControl_Click(object sender, RoutedEventArgs e)
+        private void MyCustomControl_Click(object sender, CustomControlLib.MyRoutedEventArgs e)
         {
 
         }
