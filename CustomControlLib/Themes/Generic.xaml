@@ -10,7 +10,9 @@
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
-                        <Button x:Name="PART_Button" Content="Click Me" />
+                        <Button x:Name="PART_Button" Content="Click Me" 
+                                Command="local:ControlCommands.UpdateTextCommand"
+                                CommandParameter="Updated from Control" />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
