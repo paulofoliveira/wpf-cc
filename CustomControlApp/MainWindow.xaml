@@ -16,6 +16,8 @@
                    FontSize="18"
                    Margin="5"
                    Text="{Binding Model.Name}" />
-        
+
+        <cc:MyCustomControl Grid.Row="1" Command="{Binding UpdateCommand}" />
+
     </Grid>
 </Window>
