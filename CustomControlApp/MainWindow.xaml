@@ -7,6 +7,9 @@
         xmlns:cc="clr-namespace:CustomControlLib;assembly=CustomControlLib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-    </Grid>
+    <StackPanel>
+        <cc:MyCustomControl x:Name="control1" />
+        <cc:MyCustomControl x:Name="control2" />
+        <Button Content="Update somthing" />
+    </StackPanel>
 </Window>
