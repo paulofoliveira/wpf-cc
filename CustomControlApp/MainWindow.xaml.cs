@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using CustomControlLib;
+using System.ComponentModel;
 using System.Windows;
 
 namespace CustomControlApp
@@ -11,6 +12,11 @@ namespace CustomControlApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ControlCommands.UpdateTextCommand.Execute("Update from Code", control1);
         }
     }
 

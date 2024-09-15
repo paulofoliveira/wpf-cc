@@ -10,6 +10,10 @@
     <StackPanel>
         <cc:MyCustomControl x:Name="control1" />
         <cc:MyCustomControl x:Name="control2" />
-        <Button Content="Update somthing" />
+        <!--<Button Content="Update something"
+                Command="{x:Static cc:ControlCommands.UpdateTextCommand}"
+                CommandParameter="Update from View"
+                CommandTarget="{Binding ElementName=control1}"/>-->
+        <Button Content="Update something" Click="Button_Click" />
     </StackPanel>
 </Window>
