@@ -4,6 +4,8 @@ using System.Windows.Input;
 
 namespace CustomControlLib
 {
+    [TemplateVisualState(Name = "Normal", GroupName = "CommonStates")]
+    [TemplateVisualState(Name = "MouseOver", GroupName = "CommonStates")]
     public class MyCustomControl : Control
     {
         static MyCustomControl()
