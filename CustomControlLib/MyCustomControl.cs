@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace CustomControlLib
 {
@@ -17,5 +18,25 @@ namespace CustomControlLib
         }
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(MyCustomControl), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+
+        private void UpdateVisualState(bool useTransitions)
+        {
+            if (IsMouseOver)
+                VisualStateManager.GoToState(this, "MouseOver", useTransitions);
+            else
+                VisualStateManager.GoToState(this, "Normal", useTransitions);
+        }
+
+        protected override void OnMouseEnter(MouseEventArgs e)
+        {
+            base.OnMouseEnter(e);
+            UpdateVisualState(true);
+        }
+
+        protected override void OnMouseLeave(MouseEventArgs e)
+        {
+            base.OnMouseLeave(e);
+            UpdateVisualState(true);
+        }
     }
 }
