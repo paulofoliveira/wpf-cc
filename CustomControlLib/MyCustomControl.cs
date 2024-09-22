@@ -16,5 +16,10 @@ namespace CustomControlLib
         }
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(MyCustomControl), new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+
+        public static ComponentResourceKey CommonBrush
+        {
+            get { return new ComponentResourceKey(typeof(MyCustomControl), "CommonBrush"); }
+        }
     }
 }

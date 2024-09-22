@@ -2,9 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CustomControlLib">
 
-    <SolidColorBrush x:Key="CommonBrush" Color="Blue" />
+    <!--<SolidColorBrush x:Key="CommonBrush" Color="Blue" />-->
 
-    <Style TargetType="{x:Type local:MyCustomControl}">
+    <SolidColorBrush x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type local:MyCustomControl}, ResourceId=CommonBrush}" Color="Blue" />
+
+    <!--<Style TargetType="{x:Type local:MyCustomControl}">
         <Setter Property="Background" Value="{StaticResource CommonBrush}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -24,6 +26,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
 </ResourceDictionary>

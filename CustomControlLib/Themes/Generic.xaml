@@ -3,10 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:CustomControlLib">
 
-    <SolidColorBrush x:Key="CommonBrush" Color="Gray" />
+    <SolidColorBrush x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type local:MyCustomControl}, ResourceId=CommonBrush}" Color="Gray" />
 
     <Style TargetType="{x:Type local:MyCustomControl}">
-        <Setter Property="Background" Value="{StaticResource CommonBrush}" />
+        <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type local:MyCustomControl}, ResourceId=CommonBrush}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:MyCustomControl}">
