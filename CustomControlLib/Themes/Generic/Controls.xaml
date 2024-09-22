@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:CustomControlLib">
 
     <Style TargetType="{x:Type local:MyCustomControl}">
-        <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type local:MyCustomControl}, ResourceId=CommonBrush}}" />
+        <Setter Property="Background" Value="{DynamicResource {x:Static local:SharedResources.CommonBrushKey}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:MyCustomControl}">

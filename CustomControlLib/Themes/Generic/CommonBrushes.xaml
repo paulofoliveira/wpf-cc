@@ -2,6 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CustomControlLib">
     
-    <SolidColorBrush x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type local:MyCustomControl}, ResourceId=CommonBrush}" Color="Gray" />
+    <SolidColorBrush x:Key="{x:Static local:SharedResources.CommonBrushKey}" Color="Gray" />
     
 </ResourceDictionary>
